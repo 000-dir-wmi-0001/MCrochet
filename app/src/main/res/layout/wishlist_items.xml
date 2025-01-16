@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:layout_marginTop="16dp"
+    android:background="@drawable/rounded_background"
+    android:gravity="center_vertical">
+
+    <!-- Product Image -->
+    <ImageView
+        android:id="@+id/Wimage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/baseline_image"
+        android:contentDescription="Product Image" />
+
+    <!-- Product Details (Name, Price, Category) -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="start"
+        android:paddingStart="10dp">
+
+        <!-- Product Name -->
+        <TextView
+            android:id="@+id/product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Blue Sofa"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginBottom="5dp" />
+
+        <!-- Product Price -->
+        <TextView
+            android:id="@+id/product_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹6000"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginBottom="5dp" />
+
+    </LinearLayout>
+
+    <!-- Delete Button -->
+    <ImageView
+        android:id="@+id/Wdelete"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/delete_24"
+        android:contentDescription="Delete product"
+        android:layout_gravity="center_vertical"
+        android:clickable="true"
+        android:focusable="true" />
+
+</LinearLayout>

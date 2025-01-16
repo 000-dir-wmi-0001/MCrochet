@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    >
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        tools:context=".fragment.AdminHomeFragment"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/headtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:gravity="center"
+            android:text="Dashboard"
+            android:textColor="@color/black"
+            android:textSize="27sp"
+            android:fontFamily="@font/roboto_bold"
+            android:layout_marginBottom="16dp" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:orientation="horizontal"
+            android:rowCount="2"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:columnOrderPreserved="false"
+            android:padding="10dp"
+            android:layout_alignParentTop="true">
+
+            <ImageButton
+                android:id="@+id/imageButton1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_columnWeight="1"
+                android:src="@drawable/feedback_ic"
+                android:contentDescription="Feedbacks"
+                android:layout_margin="8dp"
+                android:scaleType="centerInside"
+                android:background="?android:attr/selectableItemBackgroundBorderless" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_columnWeight="1"
+                android:src="@drawable/users_ic"
+                android:contentDescription="Users"
+                android:layout_margin="8dp"
+                android:scaleType="centerInside"
+                android:background="?android:attr/selectableItemBackgroundBorderless"/>
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_columnWeight="1"
+                android:src="@drawable/order_all_ic"
+                android:contentDescription="Products"
+                android:layout_margin="8dp"
+                android:scaleType="centerInside"
+                android:background="?android:attr/selectableItemBackgroundBorderless"/>
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_columnWeight="1"
+                android:src="@drawable/add_product"
+                android:contentDescription="Add Product"
+                android:layout_margin="8dp"
+                android:scaleType="centerInside"
+                android:background="?android:attr/selectableItemBackgroundBorderless"/>
+
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_columnWeight="1"
+                android:src="@drawable/all_product"
+                android:contentDescription="All Product"
+                android:layout_margin="8dp"
+                android:scaleType="centerInside"
+                android:background="?android:attr/selectableItemBackgroundBorderless"/>
+
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragment.AdminAddProductFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <!-- Image at the top -->
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="396dp"
+            android:layout_height="167dp"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintBottom_toTopOf="@+id/card_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/add"
+            tools:ignore="MissingConstraints" />
+
+        <!-- CardView to contain form -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="347dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="5dp"
+            app:cardBackgroundColor="@color/darkgrey"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView1">
+
+            <!-- Inner ConstraintLayout for the form -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#A95EFA">
+
+                <!-- Upload Image Button -->
+                <Button
+                    android:id="@+id/btnchoose"
+                    android:layout_width="132dp"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/button_bg2"
+                    android:text="Upload Image"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageupload"
+                    app:layout_constraintWidth_percent="0.8" />
+
+                <!-- Name EditText -->
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="232dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="56dp"
+                    android:layout_marginEnd="56dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/edit_text_bg"
+                    android:hint="Name of the product"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/darkgrey"
+                    android:textColorHint="#919191"
+                    app:layout_constraintBottom_toTopOf="@+id/price"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnchoose"
+                    app:layout_constraintWidth_percent="0.8" />
+
+                <!-- Price EditText -->
+                <EditText
+                    android:id="@+id/price"
+                    android:layout_width="232dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="56dp"
+                    android:layout_marginEnd="56dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/edit_text_bg"
+                    android:hint="Price of the product"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/darkgrey"
+                    android:textColorHint="#919191"
+                    app:layout_constraintBottom_toTopOf="@+id/type"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/name"
+                    app:layout_constraintWidth_percent="0.8" />
+
+                <!-- Type EditText -->
+                <EditText
+                    android:id="@+id/type"
+                    android:layout_width="232dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="56dp"
+                    android:layout_marginEnd="56dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/edit_text_bg"
+                    android:hint="Type of product"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/darkgrey"
+                    android:textColorHint="#919191"
+                    app:layout_constraintBottom_toTopOf="@+id/stock_quantity"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/price"
+                    app:layout_constraintWidth_percent="0.8" />
+
+                <!-- Stock Quantity EditText -->
+                <EditText
+                    android:id="@+id/stock_quantity"
+                    android:layout_width="232dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="56dp"
+                    android:layout_marginEnd="56dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/edit_text_bg"
+                    android:hint="Stock Quantity"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/darkgrey"
+                    android:textColorHint="#919191"
+                    app:layout_constraintBottom_toTopOf="@+id/btnAdd"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/type"
+                    app:layout_constraintWidth_percent="0.8" />
+
+                <!-- Add Button -->
+                <Button
+                    android:id="@+id/btnAdd"
+                    android:layout_width="232dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="56dp"
+                    android:layout_marginEnd="56dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/button_bg2"
+                    android:text="ADD"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/stock_quantity"
+                    app:layout_constraintWidth_percent="0.8" />
+
+                <!-- Image for product -->
+                <ImageView
+                    android:id="@+id/imageupload"
+                    android:layout_width="213dp"
+                    android:layout_height="111dp"
+                    android:layout_marginStart="65dp"
+                    android:layout_marginEnd="65dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="28dp"
+                    android:src="@drawable/baseline_image"
+                    app:layout_constraintBottom_toTopOf="@+id/btnchoose"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <!-- Title Text -->
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="29dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Add Products"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    android:layout_gravity="center"
+                    app:layout_constraintBottom_toTopOf="@+id/imageupload"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+        <!-- ProgressBar for image upload -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            tools:ignore="MissingConstraints" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</android.widget.ScrollView>

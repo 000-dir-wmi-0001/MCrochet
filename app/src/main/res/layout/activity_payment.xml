@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:material="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <!-- Root layout using ConstraintLayout for better alignment -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        tools:context=".Payment">
+
+        <!-- Back Button Image -->
+        <ImageView
+            android:id="@+id/Pback"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:contentDescription="Back Button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Title TextView placed outside the input form -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payment"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="60dp"
+            android:layout_gravity="center" />
+
+        <!-- CardView for Payment Method Options -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewPaymentOptions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <RadioGroup
+                android:id="@+id/radioGroupPayment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <RadioButton
+                    android:id="@+id/radio_cash_on_delivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cash On Delivery"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/radio_online_payment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Online Payment"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </RadioGroup>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- CardView for Address Selection -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewAddressSelection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/cardViewPaymentOptions"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:text="Select Shipping Address:"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:id="@+id/addressRadioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <!-- Dynamically populated addresses will go here -->
+                </RadioGroup>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- CardView for Payment Details (Visible only when "Online Payment" is selected) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewPaymentDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="8dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/cardViewAddressSelection"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- QR Code Image (for Online Payment) -->
+                <ImageView
+                    android:id="@+id/qrCodeImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/qr" /> <!-- Placeholder for QR code -->
+
+                <!-- Transaction ID EditText -->
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/transactionId"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="Enter Transaction ID"
+                    android:textColor="@color/black"
+                    android:textColorHint="#919191"
+                    android:textSize="16sp"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Material Button for Pay Now -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewPayNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="@color/purple_200"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="10dp"
+            app:layout_constraintTop_toBottomOf="@id/cardViewPaymentDetails"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/paybtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pay Now"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</android.widget.ScrollView>
+
+
+
+
+
+    <!--        <?xml version="1.0" encoding="utf-8"?>-->
+<!--<android.widget.ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:fillViewport="true">-->
+
+<!--    &lt;!&ndash; Root layout inside the ScrollView &ndash;&gt;-->
+<!--    <RelativeLayout-->
+<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--        xmlns:tools="http://schemas.android.com/tools"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/white"-->
+<!--        tools:context=".Payment">-->
+
+<!--        &lt;!&ndash; Back Button Image &ndash;&gt;-->
+<!--        <ImageView-->
+<!--            android:id="@+id/Pback"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:src="@drawable/baseline_arrow_back_24"-->
+<!--            android:contentDescription="Back Button" />-->
+
+<!--        &lt;!&ndash; Title TextView placed outside the input form &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/title"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginTop="60dp"-->
+<!--            android:text="Payment"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="25sp"-->
+<!--            android:textStyle="bold" />-->
+
+<!--        &lt;!&ndash; CardView for Name and Address input &ndash;&gt;-->
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/cardViewName"-->
+<!--            android:layout_width="330dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginTop="120dp"-->
+<!--            app:cardCornerRadius="10dp"-->
+<!--            app:cardElevation="5dp"-->
+<!--            app:cardBackgroundColor="@color/white">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="16dp">-->
+
+<!--                &lt;!&ndash; Name EditText &ndash;&gt;-->
+<!--                <EditText-->
+<!--                    android:id="@+id/Pname"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    android:hint="Enter your name"-->
+<!--                    android:paddingLeft="10dp"-->
+<!--                    android:paddingTop="10dp"-->
+<!--                    android:paddingBottom="10dp"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textColorHint="#919191"-->
+<!--                    android:textSize="20sp" />-->
+
+<!--                &lt;!&ndash; Address EditText &ndash;&gt;-->
+<!--                <EditText-->
+<!--                    android:id="@+id/Paddress"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    android:hint="Enter address"-->
+<!--                    android:paddingLeft="10dp"-->
+<!--                    android:paddingTop="10dp"-->
+<!--                    android:paddingBottom="10dp"-->
+<!--                    android:textColor="@color/darkgrey"-->
+<!--                    android:textColorHint="#919191"-->
+<!--                    android:textSize="20sp" />-->
+<!--            </LinearLayout>-->
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        &lt;!&ndash; CardView for Payment Method Options &ndash;&gt;-->
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/cardViewPaymentOptions"-->
+<!--            android:layout_width="330dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_below="@+id/cardViewName"-->
+<!--            app:cardCornerRadius="10dp"-->
+<!--            app:cardElevation="5dp"-->
+<!--            app:cardBackgroundColor="@color/white">-->
+
+<!--            <RadioGroup-->
+<!--                android:id="@+id/radioGroupPayment"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:padding="16dp">-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/radio_cash_on_delivery"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Cash On Delivery"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp" />-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/radio_online_payment"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Online Payment"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp" />-->
+<!--            </RadioGroup>-->
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        &lt;!&ndash; CardView for Payment Details (Visible only when "Online Payment" is selected) &ndash;&gt;-->
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/cardViewPaymentDetails"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/cardViewPaymentOptions"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            app:cardBackgroundColor="@color/white"-->
+<!--            app:cardCornerRadius="10dp"-->
+<!--            app:cardElevation="5dp"-->
+<!--            android:visibility="gone">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="16dp">-->
+
+<!--                &lt;!&ndash; QR Code Image (for Online Payment) &ndash;&gt;-->
+<!--                <ImageView-->
+<!--                    android:id="@+id/qrCodeImage"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="200dp"-->
+<!--                    android:src="@drawable/qr" /> &lt;!&ndash; Placeholder for QR code &ndash;&gt;-->
+
+<!--                &lt;!&ndash; Transaction ID EditText &ndash;&gt;-->
+<!--                <EditText-->
+<!--                    android:id="@+id/transactionId"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="45dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:background="@drawable/edit_text_bg"-->
+<!--                    android:hint="Enter Transaction ID"-->
+<!--                    android:paddingLeft="10dp"-->
+<!--                    android:paddingTop="10dp"-->
+<!--                    android:paddingBottom="10dp"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textColorHint="#919191"-->
+<!--                    android:textSize="20sp" />-->
+<!--            </LinearLayout>-->
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        &lt;!&ndash; CardView for Pay Now Button &ndash;&gt;-->
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/cardViewPayNow"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_below="@id/cardViewPaymentDetails"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            app:cardBackgroundColor="@color/purple_200"-->
+<!--            app:cardCornerRadius="10dp"-->
+<!--            app:cardElevation="10dp">-->
+
+<!--            <Button-->
+<!--                android:id="@+id/paybtn"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Pay Now"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="16sp"-->
+<!--                android:textStyle="bold" />-->
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--    </RelativeLayout>-->
+
+<!--</android.widget.ScrollView>-->
+
+

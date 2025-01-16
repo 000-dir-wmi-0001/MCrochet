@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/home"
+        android:icon="@drawable/baseline_home_24"
+        android:title="User report" />
+
+    <item android:id="@+id/addP"
+        android:icon="@drawable/baseline_add_shopping_cart_24"
+        android:title="Add Product" />
+
+    <item android:id="@+id/order"
+        android:icon="@drawable/baseline_insert_chart_24"
+        android:title="Order Report" />
+
+    <item android:id="@+id/enquiry"
+        android:icon="@drawable/baseline_help_center_24"
+        android:title="User Enquiries" />
+
+    <item android:id="@+id/log"
+        android:icon="@drawable/baseline_login_24"
+        android:title="Logout" />
+</menu>

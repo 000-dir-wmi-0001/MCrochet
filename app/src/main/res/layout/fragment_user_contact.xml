@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".UserContactFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="ScrollViewCount,UselessParent"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="398dp"
+                android:layout_height="270dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/tcf_"
+                tools:ignore="MissingConstraints" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="350dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/send_feedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="1dp"
+                    app:contentPaddingTop="2dp"
+                    app:contentPaddingBottom="20dp"
+                    app:cardBackgroundColor="#EBEBEF"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="20dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/sendmsg"
+                            android:layout_width="283dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:fontFamily="sans-serif-black"
+                            android:minWidth="48dp"
+                            android:minHeight="48dp"
+                            android:text="Send a message !!"
+                            android:textColor="@color/black"
+                            android:textSize="30sp" />
+
+                        <EditText
+                            android:id="@+id/send_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edit_text_bg"
+                            android:layout_below="@+id/sendmsg"
+                            android:hint="Fullname"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:textColor="#828282"
+                            android:textColorHint="#919191"
+                            android:layout_marginTop="20dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.493"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/send_mail"
+                            app:layout_constraintVertical_bias="0.21"
+                            app:layout_constraintWidth_percent="0.8"/>
+
+                        <EditText
+                            android:id="@+id/send_mail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/send_name"
+                            android:background="@drawable/edit_text_bg"
+                            android:hint="email"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:textColor="#828282"
+                            android:textColorHint="#919191"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.493"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/send_msgg"
+                            app:layout_constraintVertical_bias="0.21"
+                            app:layout_constraintWidth_percent="0.8" />
+
+                        <EditText
+                            android:id="@+id/send_msgg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/send_mail"
+                            android:background="@drawable/edit_text_bg"
+                            android:hint="message"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:textColor="#828282"
+                            android:textColorHint="#919191"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.493"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/submit_button"
+                            app:layout_constraintVertical_bias="0.21"
+                            app:layout_constraintWidth_percent="0.8"  />
+
+                        <Button
+                            android:id="@+id/submit_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/send_msgg"
+                            android:layout_marginTop="30dp"
+                            android:text="submit" />
+
+                        <ProgressBar
+                            android:id="@+id/progressBar3"
+                            style="?android:attr/progressBarStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="284dp"
+                            android:layout_marginTop="21dp"
+                            android:layout_marginEnd="57dp" />
+
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/give_feedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="550dp"
+                    android:layout_marginEnd="1dp"
+                    app:contentPaddingTop="2dp"
+                    app:contentPaddingBottom="20dp"
+                    app:cardBackgroundColor="#EBEBEF"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="20dp"
+                    android:layout_marginBottom="80dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        >
+
+                        <TextView
+                            android:id="@+id/gtouch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-black"
+                            android:text="Get in Touch !!!"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:id="@+id/gtouchinfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/gtouch"
+                            android:text="got_questions_or_need_assistance_reach_out_to_our_friendly_team_for_all_your_online_car_washing_needs"
+                            android:textSize="19sp"
+                            android:layout_marginTop="15dp"/>
+
+                        <ImageView
+                            android:id="@+id/gtouchnum"
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:src="@drawable/contactloc"
+                            android:layout_below="@+id/gtouchinfo"
+                            android:layout_marginTop="35dp"/>
+
+                        <TextView
+                            android:id="@+id/gtouchnumtxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/gtouchinfo"
+                            android:layout_marginStart="14dp"
+                            android:layout_marginTop="36dp"
+                            android:layout_toEndOf="@+id/gtouchnum"
+                            android:text="91_9865327410"
+                            android:textSize="19sp" />
+
+                        <ImageView
+                            android:id="@+id/gtouchmail"
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:src="@drawable/contactmail"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@+id/gtouchnum"/>
+
+                        <TextView
+                            android:id="@+id/gtouchmailtxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/gtouchnumtxt"
+                            android:layout_marginStart="14dp"
+                            android:layout_marginTop="14dp"
+                            android:layout_toEndOf="@+id/gtouchmail"
+                            android:text="carshine01_gmail_com"
+                            android:textSize="19sp" />
+
+                        <ImageView
+                            android:id="@+id/gtouchadd"
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:src="@drawable/contactmail"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@+id/gtouchmail"/>
+
+                        <TextView
+                            android:id="@+id/gtouchaddtxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/gtouchmail"
+                            android:layout_marginStart="14dp"
+                            android:layout_marginTop="11dp"
+                            android:layout_toEndOf="@+id/gtouchadd"
+                            android:text="pune_maharashtra"
+                            android:textSize="19sp" />
+
+                        <TextView
+                            android:id="@+id/followus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-black"
+                            android:text="follow_us_on"
+                            android:textSize="30sp"
+                            android:layout_marginTop="25dp"
+                            android:layout_below="@+id/gtouchadd" />
+
+                        <ImageView
+                            android:id="@+id/facebook"
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:src="@drawable/contactfacebook"
+                            android:layout_marginTop="20dp"
+                            android:layout_below="@+id/followus"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:id="@+id/insta"
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:layout_below="@+id/followus"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="21dp"
+                            android:layout_toEndOf="@+id/facebook"
+                            android:src="@drawable/contactinsta" />
+
+                        <ImageView
+                            android:id="@+id/youtube"
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:layout_below="@+id/followus"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="21dp"
+                            android:layout_toEndOf="@+id/insta"
+                            android:src="@drawable/contactyoutube" />
+
+                        <ImageView
+                            android:id="@+id/twet"
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:layout_below="@+id/followus"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="21dp"
+                            android:layout_toEndOf="@+id/youtube"
+                            android:src="@drawable/contactx"/>
+
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</FrameLayout>

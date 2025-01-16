@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "839009395342",
+    "project_id": "thecrochet-f4e3d",
+    "storage_bucket": "thecrochet-f4e3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:839009395342:android:8d41320a3c5bfb32995fdf",
+        "android_client_info": {
+          "package_name": "com.example.login_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVHdSiZZFdspj6ZcwCKB5IhrneWt-ovGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:839009395342:android:cb93825b8746d51b995fdf",
+        "android_client_info": {
+          "package_name": "com.example.thecrochetfactory"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVHdSiZZFdspj6ZcwCKB5IhrneWt-ovGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
